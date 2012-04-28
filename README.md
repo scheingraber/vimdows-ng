@@ -1,7 +1,7 @@
-Vimdows-keys
-------------
+Vimdows Navigation
+------------------
 
-Vimdows-keys tries to allow you to use Vim (or vim-like) commands outside of vim. 
+Vimdows Navigation tries to allow you to use Vim (or vim-like) commands outside of vim. 
 The [original script](http://www.autohotkey.com/community/viewtopic.php?t=44762)
 was written by Rich Alesi, and most of the credit for this script goes to him. I
 modified a variety of things, but I would have had no idea how to even
