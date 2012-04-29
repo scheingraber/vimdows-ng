@@ -26,11 +26,11 @@ Note that because of the way Quick Vim functions, you will have to use
 	====                                   ========
 	h, j, k, l, w, b, $, ^                 navigation
 	dd, d<w, b, $, ^>                      deletion
-	o, O                                   insert lines
+	o, O                                   insert lines and exit vim 'mode'
 	p, P                                   paste lines
-	y                                      yank mode; not perfect
+	v                                      yank mode; not perfect
    	                                           hit y after you're done selecting to copy
-	Y                                      similar to 'y', except copies lines
-	<#[cmd]>                               Run 'cmd' # times. E.g. 3dd. May not be perfect
+	<#[cmd]>                               Run 'cmd' # times. E.g. 3dd, 4w, 10l, etc
+	u, <shift> u                           Undo, redo
 	/, n                                   Find, next found result (Uses Ctrl + F and F3)
 	
