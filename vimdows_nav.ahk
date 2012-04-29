@@ -1,3 +1,4 @@
+; Auto-Execute
 ; Modal_Vim.ahk
 ; Initial Build: Rich Alesi
 ; Friday, May 29, 2009
@@ -13,8 +14,12 @@ CoordMode, Tooltip, Screen
 modal =
 context =
 num =
+delete = x
+yank = c
+yanklines = cl
 
 SetTimer, vim, 100
+Return
 
 ;Disable CAPSLOCK
 $CAPSLOCK::
@@ -84,85 +89,50 @@ unvimize()
 
 ; Navigation
 
-; A: The original script used 'a' to move to the
-; front of the line, and 'e' to move to the back.
-; Changed it to use '$' and '^' instead.
++4::handle_nav_mode("end")
 
-+4::
-if modal = 
-	send, {end}
-else
-	Send, +{end}
-	GoSub, Run_Mode
-return
-
-+6::
-if modal =
-	send, {Home}
-else
-	Send, +{Home}
-	GoSub, Run_Mode
-return
++6::handle_nav_mode("home")
 
 ; navigation keys
 
-h::
+h::handle_nav_mode("{left " . num . "}")
+
+j::handle_nav_mode("{down " . num . "}")
+
+k::handle_nav_mode("{up " . num . "}")
+
+l::handle_nav_mode("{right " . num . "}")
+
+w::handle_nav_mode("^{right " . num . "}")
+
+b::handle_nav_mode("^{left " . num . "}")
+
+; Insert lines
+o::
 if modal = 
-	Send, {Left}
-else
-	Send, +{Left}
+	Send, {END}{ENTER}
+	unvimize()
+	vimModeOn = false
 return
 
-j::
-if modal = 
-	Send, {Down}
-else if modal = cl
-	Send, {ShiftDown}{Down}{End}{ShiftUp}
-else
-	Send, +{Down}
-return
-
-k::
++o::
 if modal =
-	Send, {Up}
-else if modal = cl
-	Send, {ShiftDown}{Up}{Home}{ShiftUp}
-else
-	Send, +{Up}
+	Send, {HOME}{ENTER}{UP}
+	unvimize()
+	vimModeOn = false
 return
 
-l::
-if modal = 
-	Send, {Right}
-else
-	Send, +{Right}
-return
-
-o::Send, {END}{ENTER}
-+o::Send, {HOME}{ENTER}{UP}
-
+; Go out of whatever mode you're in
 Esc::
 	modal = 
+	num = 
+	context = 
+	Send {Left}{Right}
 return
 
 i::
 	unvimize()
 	vimModeOn=false
-return
-
-w::
-if modal =
-   send, ^{RIGHT %num%}
-else
-   Send, +^{RIGHT %num%}
-return
-
-b::
-
-if modal =
-   Send, ^{LEFT %num%}
-else
-   Send, +^{LEFT %num%}
 return
 
 ; Searching
@@ -184,7 +154,7 @@ n::Send {F3}
 p::
 IfInString, clipboard, `n
 {
-   Send, {END}{ENTER}^v{DEL}
+   Send, {END}{ENTER}^v
 }
 Else
 {
@@ -214,59 +184,83 @@ u::Send, ^z
 
 ; Modal
 d::
-if modal =
-{
-   context = Delete Mode
-   modal = x
-   ;GoSub, Modal_Input
+if (modal = "") {
+   context = Delete Mode 
+   modal = %delete%
+} else if ( modal = delete) {
+   GetLineSelection()
+   Run_Mode()
 }
-else if modal = x
-{
-   GoSub, GetLineSelection
-   GoSub, Run_Mode
+return
+
+v::
+if (modal = "") {
+   context = Yank Mode
+   modal = %yank%
+}
+return
+
++v::
+if (modal = "") {
+	GetLineSelection()
+	context = Line Yank Mode
+	modal = %yanklines%
 }
 return
 
 y::
-if modal =
-{
-   context = Yank Mode
-   modal = c
-   ;GoSub, Modal_Input
+if (modal = yanklines) {
+	modal = %yank%
 }
-else if modal = c
-{
-   GoSub, Run_Mode
+Run_Mode()
+return
+
+c::
+if (modal = yanklines or modal = yank) {
+	modal = %delete%
+	Run_Mode()
+	unvimize()
+	vimModeOn = false
+} else {
+	Send, c
 }
 return
 
-+y::
-if modal = 
-{
-	context = Yank Mode
-	Send, {End}{Shift Down}{Home}{Shift Up}
-	modal = cl
-} 
-else if modal = cl
-{
-	modal = c
-	GoSub, Run_Mode
-}
-return
-
-r::Reload
+^r::Reload
 
 #IfWinExist
 
 ; ===== SubRoutines =====
 
-GetLineSelection:
-   Send, {Home}{Shift Down}{End}{DOWN %num%}{Home}{Shift Up}
-Return
+handle_nav_mode(nav)
+{
+	global
+	num =
+	if (modal =  "") {
+		Send, %nav%
+	} else {
+		Send, +%nav%
+		if (modal = delete) {
+			Run_Mode()
+		} else if (modal = yanklines) {
+			if (nav = "down") {
+				Send +{End}
+			} else if (nav = "up") {
+				Send +{Home}
+			}
+		}
+	}
+	return
+}
 
-Run_Mode:
+GetLineSelection() {
+   Send, {ShiftUp}{Home}{Shift Down}{End}{DOWN %num%}{Home}{Shift Up}
+}
+
+Run_Mode() {
+   global modal
    Send, ^%modal%
    Send {Left}{RIGHT}
    num =
    modal =
-return
+}
