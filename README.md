@@ -14,7 +14,7 @@ system notification area until activated, when it'll show an icon on your taskba
 ###Activation
 
 **Vim "mode"**: Toggle with <tt>Shift</tt>+<tt>Esc</tt>; <tt>i</tt> will also exit 
-the mode
+this mode
 
 
 **Quick Vim keys**:  <tt>CapsLock</tt> + <tt>cmd</tt>
