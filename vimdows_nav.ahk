@@ -89,9 +89,9 @@ unvimize()
 
 ; Navigation
 
-+4::handle_nav_mode("end")
++4::handle_nav_mode("{end}")
 
-+6::handle_nav_mode("home")
++6::handle_nav_mode("{home}")
 
 ; navigation keys
 
