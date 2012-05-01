@@ -62,13 +62,13 @@ Return
 vimize()
 {
   Gui 11:Show, Minimize, vimOn ; Hide,
-  vimModeOn = true
+  vimModeOn := true
 }
 
 unvimize()
 {
   Gui 11:Destroy
-  vimModeOn = false
+  vimModeOn := false
 }
 
 #IFWinExist vimOn
@@ -112,14 +112,14 @@ o::
 if modal = 
 	Send, {END}{ENTER}
 	unvimize()
-	vimModeOn = false
+	vimModeOn := false
 return
 
 +o::
 if modal =
 	Send, {HOME}{ENTER}{UP}
 	unvimize()
-	vimModeOn = false
+	vimModeOn := false
 return
 
 ; Go out of whatever mode you're in
@@ -132,7 +132,7 @@ return
 
 i::
 	unvimize()
-	vimModeOn=false
+	vimModeOn := false
 return
 
 ; Searching
@@ -140,12 +140,12 @@ return
 /::
   send, ^f ;; search
   unvimize()
-  vimModeOn = false
+  vimModeOn := false
   return
 ^/::
   send, ^h ;; search
   unvimize()
-  vimModeOn = false
+  vimModeOn := false
   return
 n::Send {F3}
 
@@ -220,13 +220,13 @@ if (modal = yanklines or modal = yank) {
 	modal = %delete%
 	Run_Mode()
 	unvimize()
-	vimModeOn = false
+	vimModeOn := false
 } else {
 	Send, c
 }
 return
 
-^r::Reload
+^+!r::Reload
 
 #IfWinExist
 
