@@ -1,6 +1,13 @@
 Vimdows Navigation
 ------------------
 
+Update: It seems that, at least on my computer, running this script for a while makes
+dwm.exe shoot up in CPU. I have utterly no idea why this would be, but I'll try to see
+if I can find out when I get around to it. I'm not sure if this is isolated to my
+computer or if this occurs everywhere.
+
+---
+
 Vimdows Navigation tries to allow you to use Vim (or vim-like) commands outside of vim. 
 The [original script](http://www.autohotkey.com/community/viewtopic.php?t=44762)
 was written by Rich Alesi, and most of the credit for this script goes to him. I
