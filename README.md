@@ -11,7 +11,7 @@ system notification area until activated, when it'll show an icon on your taskba
 
 
 
-###Additional mappings in normal mode
+###Additional mappings in normal mode provided by this fork
 - "a" and "A"
 - 0 goes to first character in line
 - "C" and "D"
