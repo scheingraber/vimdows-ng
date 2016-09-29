@@ -42,13 +42,13 @@ vim:
 while (vimModeOn = true or (!GetKeyState("Ctrl","P") and GetKeyState("CAPSLOCK", "P"))) 
 ; make it not run if ctrl+capslock is pressed (so ctrl+capslock toggles capslock
 {
-	vimize()
-    if modal !=
+   vimize()
+   if modal !=
       Tooltip, %context%: %num%, 60, 10
    else if num !=
       Tooltip, %num%, 60, 10
    else
-      Tooltip
+      Tooltip, vimdows, 60, 10
    SetTimer, vim, off
 }
 
@@ -67,6 +67,7 @@ vimize()
 
 unvimize()
 {
+  Tooltip
   Gui 11:Destroy
   vimModeOn := false
 }
