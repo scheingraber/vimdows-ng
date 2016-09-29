@@ -1,15 +1,28 @@
 Vimdows Navigation
 ------------------
 
-Vimdows Navigation tries to allow you to use Vim (or vim-like) commands outside of vim. 
-The [original script](http://www.autohotkey.com/community/viewtopic.php?t=44762)
-was written by Rich Alesi, and most of the credit for this script goes to him. I
-modified a variety of things, but I would have had no idea how to even
-begin this if it weren't for Alesi's code. 
+Vimdows Navigation tries to allow you to use Vim (or vim-like) commands outside of vim anywhere in Windows.
+This is forked from [achalddave](https://github.com/achalddave/Vimdows-Navigation) who himself modified the
+[original script](http://www.autohotkey.com/community/viewtopic.php?t=44762)
+by Rich Alesi, and most of the credit for this script goes to him.
 
-It isn't perfect, of course, but I've found it useful. You can run the .exe, or 
-download [Autohotkey](http://www.autohotkey.com). Either way, this'll run in your
+Use it with [Autohotkey](http://www.autohotkey.com). It will run in your
 system notification area until activated, when it'll show an icon on your taskbar. 
+
+
+
+###Additional mappings in normal mode
+- "a" and "A"
+- 0 goes to first character in line
+- "C" and "D"
+- "g" and "G" to go to beginning / end of document.
+- "x" and "X" (delete).
+- "Y" to yank line.
+
+###Some modifications:
+- show tooltip "Vimdows" when active (useful when hiding task bar)
+- correction of indent and undo
+
 
 ###Activation
 
