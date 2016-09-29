@@ -83,6 +83,7 @@ unvimize()
 7:: num = %num%7
 8:: num = %num%8
 9:: num = %num%9
+;todo: check num and handle navigation / num case correctly
 ; 0:: num = %num%0
 
 ; ~ toggle case
@@ -118,6 +119,19 @@ return
 +o::
 if modal =
 	Send, {HOME}{ENTER}{UP}
+	unvimize()
+	vimModeOn := false
+return
+
+; Delete end of line
++D::
+if modal = 
+	Send, {SHIFT DOWN}{END}{SHIFT UP}{DEL}
+return
+; delete and change end of line
++C::
+if modal = 
+	Send, {SHIFT DOWN}{END}{SHIFT UP}{DEL}
 	unvimize()
 	vimModeOn := false
 return
@@ -268,7 +282,7 @@ handle_nav_mode(nav)
 }
 
 GetLineSelection() {
-   Send, {ShiftUp}{Home}{Shift Down}{End}{DOWN %num%}{Home}{Shift Up}
+   Send, {Shift Up}{Home}{Shift Down}{End}{DOWN %num%}{Home}{Shift Up}
 }
 
 Run_Mode() {
