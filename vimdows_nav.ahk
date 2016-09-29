@@ -221,6 +221,10 @@ u::Send, ^z
 ; replace
 +r::Send, {Ins}
 
+; delete
+x::Send, {Del}
++x::Send, {Backspace}
+
 ; Modal
 d::
 if (modal = "") {
