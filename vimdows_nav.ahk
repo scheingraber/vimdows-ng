@@ -39,7 +39,7 @@ return
 ;return
 
 vim:
-while (vimModeOn = true or (!GetKeyState("Ctrl","P") and GetKeyState("CAPSLOCK", "P"))) 
+while (vimModeOn = true or (!GetKeyState("Ctrl","P") and GetKeyState("CAPSLOCK", "P")))
 ; make it not run if ctrl+capslock is pressed (so ctrl+capslock toggles capslock
 {
    vimize()
@@ -111,7 +111,7 @@ b::handle_nav_mode("^{left " . num . "}")
 
 ; Insert lines
 o::
-if modal = 
+if modal =
 	Send, {END}{ENTER}
 	unvimize()
 	vimModeOn := false
@@ -126,12 +126,12 @@ return
 
 ; Delete end of line
 +D::
-if modal = 
+if modal =
 	Send, {SHIFT DOWN}{END}{SHIFT UP}{DEL}
 return
 ; delete and change end of line
 +C::
-if modal = 
+if modal =
 	Send, {SHIFT DOWN}{END}{SHIFT UP}{DEL}
 	unvimize()
 	vimModeOn := false
@@ -139,9 +139,9 @@ return
 
 ; Go out of whatever mode you're in
 Esc::
-	modal = 
-	num = 
-	context = 
+	modal =
+	num =
+	context =
 	Send {Left}{Right}
 return
 
@@ -151,17 +151,27 @@ i::
 return
 
 a::
-if modal = 
+if modal =
 	Send, {Right}
 	unvimize()
 	vimModeOn := false
 return
 
 +a::
-if modal = 
+if modal =
 	Send, {END}
 	unvimize()
 	vimModeOn := false
+return
+
+g::
+if modal =
+	Send, {Ctrl Down}{HOME}{Ctrl Up}
+return
+
++g::
+if modal =
+	Send, {Ctrl Down}{END}{Ctrl Up}
 return
 
 ; Searching
@@ -214,7 +224,7 @@ u::Send, ^z
 ; Modal
 d::
 if (modal = "") {
-   context = Delete Mode 
+   context = Delete Mode
    modal = %delete%
 } else if ( modal = delete) {
    GetLineSelection()
