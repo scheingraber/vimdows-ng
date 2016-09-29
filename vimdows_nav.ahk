@@ -258,6 +258,14 @@ if (modal = yanklines) {
 Run_Mode()
 return
 
++y::
+if (modal = "") {
+    GetLineSelection()
+    modal = %yank%
+    Run_Mode()
+}
+return
+
 c::
 if (modal = yanklines or modal = yank) {
 	modal = %delete%
