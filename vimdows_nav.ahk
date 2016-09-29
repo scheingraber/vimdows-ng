@@ -83,14 +83,14 @@ unvimize()
 7:: num = %num%7
 8:: num = %num%8
 9:: num = %num%9
-0:: num = %num%0
+; 0:: num = %num%0
 
 ; ~ toggle case
 
 ; Navigation
 
+0::handle_nav_mode("{home}")
 +4::handle_nav_mode("{end}")
-
 +6::handle_nav_mode("{home}")
 
 ; navigation keys
