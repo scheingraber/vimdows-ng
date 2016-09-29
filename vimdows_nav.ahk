@@ -135,6 +135,20 @@ i::
 	vimModeOn := false
 return
 
+a::
+if modal = 
+	Send, {Right}
+	unvimize()
+	vimModeOn := false
+return
+
++a::
+if modal = 
+	Send, {END}
+	unvimize()
+	vimModeOn := false
+return
+
 ; Searching
 
 /::
