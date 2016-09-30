@@ -26,6 +26,7 @@ system notification area until activated, when it'll show an icon on your taskba
 - correction of indent and undo
 - "inner-word" mode, not perfect: only "di" works which emulates "diw".
 - WIP change-mode.
+- provide another script to remap caps to esc.
 
 ###Todo:
 - change-mode.
