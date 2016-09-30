@@ -7,7 +7,7 @@ This is forked from [achalddave](https://github.com/achalddave/Vimdows-Navigatio
 by Rich Alesi, and most of the credit for this script goes to him.
 
 Use it with [Autohotkey](http://www.autohotkey.com). It will run in your
-system notification area until activated, when it'll show an icon on your taskbar. 
+system notification area until activated, when it'll show an icon on your taskbar.
 
 
 
@@ -18,22 +18,26 @@ system notification area until activated, when it'll show an icon on your taskba
 - "g" and "G" to go to beginning / end of document.
 - "x" and "X" (delete).
 - "Y" to yank line.
+- Ctrl-u and Ctrl-d to go page up/down.
+- Ctrl-r to redo, not shift-u.
 
-###Some modifications:
+###Some modifications in this fork:
 - show tooltip "Vimdows" when active (useful when hiding task bar)
 - correction of indent and undo
+- "inner-word" mode, not perfect: only "di" works which emulates "diw".
+- WIP change-mode.
 
 
-###Activation
+###Original Readme:
 
-**Vim "mode"**: Toggle with <tt>Shift</tt>+<tt>Esc</tt>; <tt>i</tt> will also exit 
+**Vim "mode"**: Toggle with <tt>Shift</tt>+<tt>Esc</tt>; <tt>i</tt> will also exit
 this mode
 
 
 **Quick Vim keys**:  <tt>CapsLock</tt> + <tt>cmd</tt>
 
-Note that because of the way Quick Vim functions, you will have to use 
-<tt>Ctrl</tt>+<tt>CapsLock</tt> to toggle <tt>CapsLock</tt>. 
+Note that because of the way Quick Vim functions, you will have to use
+<tt>Ctrl</tt>+<tt>CapsLock</tt> to toggle <tt>CapsLock</tt>.
 
 	Keys                                   Function
 	====                                   ========
@@ -46,4 +50,3 @@ Note that because of the way Quick Vim functions, you will have to use
 	<#[cmd]>                               Run 'cmd' # times. E.g. 3dd, 4w, 10l, etc
 	u, <shift> u                           Undo, redo
 	/, n                                   Find, next found result (Uses Ctrl + F and F3)
-	

@@ -229,7 +229,7 @@ return
 +,::Send, {End}{Home}{Home}{Del}{Del}{Del}{Del}
 +.::Send, {Home}`t
 u::Send, ^z
-+u:: Send, ^y
+^r:: Send, ^y
 
 ; replace
 +r::Send, {Ins}
