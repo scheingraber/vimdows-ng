@@ -6,8 +6,7 @@ This is forked from [achalddave](https://github.com/achalddave/Vimdows-Navigatio
 [original script](http://www.autohotkey.com/community/viewtopic.php?t=44762)
 by Rich Alesi, and most of the credit for this script goes to him.
 
-Use it with [Autohotkey](http://www.autohotkey.com). It will run in your
-system notification area until activated, when it'll show an icon on your taskbar.
+Use the provided executable or the .ahk script with [Autohotkey](http://www.autohotkey.com). It doesn not require any special permissions and will run in your system notification area until activated, when it'll show an icon on your taskbar and a small tooltip overlay in the top-left corner of the screen.
 
 
 
