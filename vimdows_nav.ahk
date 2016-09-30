@@ -7,6 +7,9 @@
 ; Some modifications: Achal Dave
 ; Friday, April 27, 2012
 
+; More modifications: Chris Scheingraber
+; Friday, September 30, 2016
+
 #Persistent
 #SingleInstance, Force
 SetKeyDelay, -1
@@ -148,8 +151,16 @@ Esc::
 return
 
 i::
++if modal =
+{
 	unvimize()
-	vimModeOn := false
+    vimModeOn := false
+; this is not correct vim behaviour yet - do not want di, but diw
+; also need a "change" mode / context
+} else {
+   GetWordSelection()
+   Run_Mode()
+}
 return
 
 a::
@@ -312,6 +323,10 @@ handle_nav_mode(nav)
 
 GetLineSelection() {
    Send, {Shift Up}{Home}{Shift Down}{End}{DOWN %num%}{Home}{Shift Up}
+}
+
+GetWordSelection() {
+	Send, {Shift Up}^{Left}{Shift Down}^{Right %num%}{Shift Up}
 }
 
 Run_Mode() {
