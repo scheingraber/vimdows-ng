@@ -151,7 +151,7 @@ Esc::
 return
 
 i::
-+if modal =
+if modal =
 {
 	unvimize()
     vimModeOn := false
