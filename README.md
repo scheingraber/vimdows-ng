@@ -17,6 +17,7 @@ Use the provided executable or the .ahk script with [Autohotkey](http://www.auto
 - "g" and "G" to go to beginning / end of document.
 - "x" and "X" (delete).
 - "Y" to yank line.
+- "I" go to first char and exit normal mode.
 - Ctrl-u and Ctrl-d to go page up/down.
 - Ctrl-r to redo, not shift-u.
 
