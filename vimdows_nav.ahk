@@ -94,6 +94,8 @@ unvimize()
 0::handle_nav_mode("{home}")
 +4::handle_nav_mode("{end}")
 +6::handle_nav_mode("{home}")
+^d::handle_nav_mode("{PgDn}")
+^u::handle_nav_mode("{PgUp}")
 
 ; navigation keys
 
@@ -298,6 +300,10 @@ handle_nav_mode(nav)
 				Send +{End}
 			} else if (nav = "up") {
 				Send +{Home}
+			} else if (nav = "PgDn") {
+				Send +{PgDn}
+			} else if (nav = "PgUp") {
+				Send +{PgUp}
 			}
 		}
 	}
