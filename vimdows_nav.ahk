@@ -129,6 +129,12 @@ if modal =
 	vimModeOn := false
 return
 
++i::
+	Send, {HOME}{HOME}
+	unvimize()
+	vimModeOn := false
+return
+
 ; Delete end of line
 +D::
 if modal =
