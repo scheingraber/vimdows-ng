@@ -1,5 +1,5 @@
-Vimdows Navigation
-------------------
+vimdows-ng navigation
+---------------------
 
 Vimdows Navigation tries to allow you to use Vim (or vim-like) commands outside of vim anywhere in Windows.
 This is forked from [achalddave](https://github.com/achalddave/Vimdows-Navigation) who himself modified the
@@ -26,6 +26,11 @@ system notification area until activated, when it'll show an icon on your taskba
 - correction of indent and undo
 - "inner-word" mode, not perfect: only "di" works which emulates "diw".
 - WIP change-mode.
+
+###Todo:
+- change-mode.
+- jump between block beginning/end (in vim, % jumps between { and }, for instance)?
+- unify with [Vim-Keybindings for Onenote](https://github.com/ChrisPara/Vim-Keybindings-For-Onenote).
 
 
 ###Original Readme:
