@@ -225,9 +225,31 @@ Else
 }
 return
 
-; Indent and Undo
-+,::Send, {End}{Home}{Home}{Del}{Del}{Del}{Del}
-+.::Send, {Home}`t
+; Decrease Indent
++,::
+IfWinActive, MATLAB
+{
+	Send, ^[
+} else {
+	; General indent
+	Send, {End}{Home}{Home}{Del}{Del}{Del}{Del}
+}
+return
+
+
+; Increase Indent
++.::
+IfWinActive, MATLAB
+{
+	Send, ^]
+} else {
+	; General indent
+	Send, {Home}`t
+}
+return
+
+
+; undo and redo
 u::Send, ^z
 ^r:: Send, ^y
 
