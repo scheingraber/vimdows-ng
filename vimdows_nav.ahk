@@ -112,6 +112,8 @@ l::handle_nav_mode("{right " . num . "}")
 
 w::handle_nav_mode("^{right " . num . "}")
 
+e::handle_nav_mode("^{right " . num . "}{left}")
+
 b::handle_nav_mode("^{left " . num . "}")
 
 ; Insert lines
