@@ -50,15 +50,17 @@ Use the provided executable or the .ahk script with [Autohotkey](http://www.auto
 ####Browsers
 - Firefox: [Vimperator](https://addons.mozilla.org/de/firefox/addon/vimperator/) and [Pentadactyl](http://5digits.org/pentadactyl/)
 - Chrome: [Vimium](https://vimium.github.io/)
+
 ####Office
 - LibreOffice: [VibreOffice](https://github.com/seanyeh/vibreoffice)
 - Thunderbird: [Muttator](https://addons.mozilla.org/de/thunderbird/addon/muttator/)
+
 ####Code
 - JetBrains IDEs: [IDEA](https://plugins.jetbrains.com/plugin/164?pr=idea)
 - for most IDEs, it's better to find a specific plugin if available.
+
 ####Editors
 - Atom: [Vim-mode plus](https://atom.io/packages/vim-mode-plus)
-
 
 
 ###Original Readme:
