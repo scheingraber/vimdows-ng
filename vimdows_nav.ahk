@@ -28,18 +28,27 @@ Return
 $CAPSLOCK::
 return
 
+; vim/normal mode
 vimModeOn := false
 
+; enter normal mode for some programs with ESC
+;SetTitleMatchMode 2 ;- Mode 2 is window title substring.
+#IfWinActive MATLAB
+Esc::
+	vimModeOn := !vimModeOn
+return
+#IfWinActive
+#IfWinActive Thunderbird
+Esc::
+	vimModeOn := !vimModeOn
+return
+#IfWinActive
+
+
+; can always enter normal mode with shift-ESC
 +Esc::
 	vimModeOn := !vimModeOn
 return
-
-;Esc::
-;	if (vimModeOn = true)
-;		vimModeOn = false
-;	else
-;		Send {Escape}
-;return
 
 vim:
 while (vimModeOn = true or (!GetKeyState("Ctrl","P") and GetKeyState("CAPSLOCK", "P")))
@@ -142,6 +151,7 @@ return
 if modal =
 	Send, {SHIFT DOWN}{END}{SHIFT UP}{DEL}
 return
+
 ; delete and change end of line
 +C::
 if modal =
