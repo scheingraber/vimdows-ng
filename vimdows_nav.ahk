@@ -202,7 +202,8 @@ if modal =
 	vimModeOn := false
 return
 
-; gg and G
+
+; gg
 g::
 if modal =
 {
@@ -368,14 +369,24 @@ if (modal = "") {
 }
 return
 
+;change text from visual mode
 c::
 if (modal = yanklines or modal = yank) {
 	modal = %delete%
 	Run_Mode()
 	unvimize()
 	vimModeOn := false
-} else {
-	Send, c
+
+;cc
+} else if modal =
+	{
+	if IsLastKey("c") {
+		GetLineSelection()
+		Send, {BACKSPACE}
+		unvimize()
+		vimModeOn := false
+		Send, {Enter}{Up}
+	}
 }
 return
 
