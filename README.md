@@ -21,7 +21,7 @@ by Rich Alesi, and most of the credit for this script goes to him.
 - _0_ goes to first character in line.
 - _C_ and _D_ to change / delete rest of line.
 - _gg_ and _G_ to go to beginning/end of document.
-- _5G_, _32G_ to go to a specific line. 
+- _5G_, _32G_ to go to a specific line.
 - _gt_ and _gT_ to go to next/previous tab.
 - _x_ and _X_ (delete).
 - _Y_ to yank line.
@@ -29,6 +29,7 @@ by Rich Alesi, and most of the credit for this script goes to him.
 - _e_ goes to end of word.
 - _Ctrl-u_ and _Ctrl-d_ to go page up/down.
 - _Ctrl-r_ to redo, not shift-u.
+- _Ctrl-b_ and _Ctrl-f_ to go page up/down.
 
 ###Some modifications in this fork:
 - show tooltip "Vimdows" when active (useful when hiding task bar)
@@ -45,6 +46,7 @@ by Rich Alesi, and most of the credit for this script goes to him.
 - Need to merge.
 
 ###Todo:
+- f _char_ should move to next occurence of _char_
 - proper change-mode.
 - jump between block beginning/end (in vim, % jumps between { and }, for instance)?
 - unify with [Vim-Keybindings for Onenote](https://github.com/ChrisPara/Vim-Keybindings-For-Onenote).
