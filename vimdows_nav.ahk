@@ -85,6 +85,12 @@ unvimize()
   vimModeOn := false
 }
 
+; function to get last key
+IsLastKey(key)
+{
+    return (A_PriorHotkey == key and A_TimeSincePriorHotkey < 400)
+}
+
 #IFWinExist vimOn
 
 ; Multiples
@@ -196,14 +202,43 @@ if modal =
 	vimModeOn := false
 return
 
+; gg and G
 g::
 if modal =
-	Send, {Ctrl Down}{HOME}{Ctrl Up}
+{
+	if IsLastKey("g")
+	{
+	    ;gg - Go to start of document
+	    Send, ^{Home}
+	}
+}
 return
 
 +g::
 if modal =
 	Send, {Ctrl Down}{END}{Ctrl Up}
+return
+
+; gt and gT
+t::
+if modal =
+{
+	if IsLastKey("g")
+	{
+	    ;gt - next tab
+	    Send, ^{PgDn}
+	}
+}
+return
++t::
+if modal =
+{
+	if IsLastKey("g")
+	{
+	    ;gT - prev tab
+	    Send, ^{PgUp}
+	}
+}
 return
 
 ; Searching

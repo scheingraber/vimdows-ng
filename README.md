@@ -1,25 +1,32 @@
 vimdows-ng navigation
 ---------------------
 
+###Info
 Vimdows Navigation tries to allow you to use Vim (or vim-like) commands outside of vim anywhere in Windows.
 This is forked from [achalddave](https://github.com/achalddave/Vimdows-Navigation) who himself modified the
 [original script](http://www.autohotkey.com/community/viewtopic.php?t=44762)
 by Rich Alesi, and most of the credit for this script goes to him.
 
-Use the provided executable or the .ahk script with [Autohotkey](http://www.autohotkey.com). It doesn not require any special permissions and will run in your system notification area until activated, when it'll show an icon on your taskbar and a small tooltip overlay in the top-left corner of the screen.
+Use the provided executable or the .ahk script with [Autohotkey](http://www.autohotkey.com). It does not require any special permissions and will run in your system notification area until activated, when it'll show an icon on your taskbar and a small tooltip overlay in the top-left corner of the screen.
 
-
+###Activate normal mode
+- with _shift-esc_
+- with _esc_ for selected programs:
+	* Matlab
+	* Thunderbird Text Composition
 
 ###Additional mappings in normal mode provided by this fork
-- "a" and "A"
-- 0 goes to first character in line
-- "C" and "D"
-- "g" and "G" to go to beginning / end of document.
-- "x" and "X" (delete).
-- "Y" to yank line.
-- "I" go to first char and exit normal mode.
-- Ctrl-u and Ctrl-d to go page up/down.
-- Ctrl-r to redo, not shift-u.
+- _a_ and _A_ to append at cursor / end of line.
+- _0_ goes to first character in line.
+- _C_ and _D_ to change / delete rest of line.
+- _gg_ and _G_ to go to beginning/end of document.
+- _gt_ and _gT_ to go to next/previous tab.
+- _x_ and _X_ (delete).
+- _Y_ to yank line.
+- _I_ go to first char and exit normal mode.
+- _e_ goes to end of word.
+- _Ctrl-u_ and _Ctrl-d_ to go page up/down.
+- _Ctrl-r_ to redo, not shift-u.
 
 ###Some modifications in this fork:
 - show tooltip "Vimdows" when active (useful when hiding task bar)
@@ -28,8 +35,12 @@ Use the provided executable or the .ahk script with [Autohotkey](http://www.auto
 - WIP change-mode.
 - provide another script to remap caps to esc.
 
+###Application-specific modifications:
+##Matlab:
+- Proper indent using editor indenting.
+
 ###Todo:
-- change-mode.
+- proper change-mode.
 - jump between block beginning/end (in vim, % jumps between { and }, for instance)?
 - unify with [Vim-Keybindings for Onenote](https://github.com/ChrisPara/Vim-Keybindings-For-Onenote).
 
