@@ -32,13 +32,14 @@ return
 vimModeOn := false
 
 ; enter normal mode for some programs with ESC
-;SetTitleMatchMode 2 ;- Mode 2 is window title substring.
+SetTitleMatchMode 2 ;- Mode 2 is window title substring.
 #IfWinActive MATLAB
 Esc::
 	vimModeOn := !vimModeOn
 return
 #IfWinActive
-#IfWinActive Thunderbird
+; Thunderbird
+#IfWinActive Verfassen
 Esc::
 	vimModeOn := !vimModeOn
 return
