@@ -32,7 +32,6 @@ return
 vimModeOn := false
 
 ; enter normal mode for some programs with ESC
-SetTitleMatchMode 2 ;- Mode 2 is window title substring.
 #IfWinActive MATLAB
 Esc::
 	vimModeOn := !vimModeOn
@@ -118,8 +117,25 @@ IsLastKey(key)
 0::handle_nav_mode("{home}")
 +4::handle_nav_mode("{end}")
 +6::handle_nav_mode("{home}")
-^d::handle_nav_mode("{PgDn}")
+
+; move back(up) and forward(down) one page
+^b::handle_nav_mode("{PgUp}")
+^f::handle_nav_mode("{PgDn}")
+
+; TODO: this should actually move half a page
 ^u::handle_nav_mode("{PgUp}")
+; d goes page down - not in Matlab since thats used to open a under caret
+; TODO: this should actually move half a page
+SetTitleMatchMode 2 ;- Mode 2 is window title substring.
+^d::
+IfWinNotActive, MATLAB
+	{
+	handle_nav_mode("{PgDn}")
+	} else
+	{
+		SendInput, ^d
+	}
+return
 
 ; navigation keys
 
