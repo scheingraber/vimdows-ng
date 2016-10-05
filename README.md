@@ -2,7 +2,8 @@ vimdows-ng navigation
 ---------------------
 
 ###Info
-Vimdows Navigation tries to allow you to use Vim (or vim-like) commands outside of vim anywhere in Windows.
+Vimdows-ng allows you to use Vim (or vim-like) normal mode outside anywhere in Windows.
+
 This is forked from [achalddave](https://github.com/achalddave/Vimdows-Navigation) who himself modified the
 [original script](http://www.autohotkey.com/community/viewtopic.php?t=44762)
 by Rich Alesi, and most of the credit for this script goes to him.
