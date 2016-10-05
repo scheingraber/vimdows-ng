@@ -226,7 +226,8 @@ if modal =
 	if IsLastKey("g")
 	{
 	    ;gt - next tab
-	    Send, ^{PgDn}
+	    Send, {Ctrl Down}{PgDn %num%}{Ctrl Up}
+	    num =
 	}
 }
 return
@@ -236,7 +237,8 @@ if modal =
 	if IsLastKey("g")
 	{
 	    ;gT - prev tab
-	    Send, ^{PgUp}
+	    Send, {Ctrl Down}{PgUp %num%}{Ctrl Up}
+	    num =
 	}
 }
 return
