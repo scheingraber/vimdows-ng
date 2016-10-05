@@ -4,11 +4,11 @@ vimdows-ng navigation
 ###Info
 Vimdows-ng allows you to use Vim (or vim-like) normal mode outside anywhere in Windows.
 
+Use the provided executable or the .ahk script with [Autohotkey](http://www.autohotkey.com). It does not require any special permissions and will run in your system notification area until activated, when it'll show an icon on your taskbar and a small tooltip overlay in the top-left corner of the screen.
+
 This is forked from [achalddave](https://github.com/achalddave/Vimdows-Navigation) who himself modified the
 [original script](http://www.autohotkey.com/community/viewtopic.php?t=44762)
 by Rich Alesi, and most of the credit for this script goes to him.
-
-Use the provided executable or the .ahk script with [Autohotkey](http://www.autohotkey.com). It does not require any special permissions and will run in your system notification area until activated, when it'll show an icon on your taskbar and a small tooltip overlay in the top-left corner of the screen.
 
 ###Activate normal mode
 - with _shift-esc_
