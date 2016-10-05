@@ -226,12 +226,24 @@ if modal =
 {
 	if num =
 	{
+	; G to go to last line
 		Send, {Ctrl Down}{END}{Ctrl Up}
 	} else
 	{
+	; go to n-th line
+	; Matlab
+	IfWinActive, MATLAB
+		{
+			SendInput, {Ctrl Down}g{Ctrl Up}
+			SendRaw, %num%
+			SendInput, {Enter}
+		    num =
+		} else {
+		; general n-th line
 		num -= 1
 		Send, {Ctrl Down}{HOME}{Ctrl Up}{Down %num%)}
 	    num =
+		}
 	}
 }
 return
