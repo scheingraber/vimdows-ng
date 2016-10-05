@@ -214,9 +214,20 @@ if modal =
 }
 return
 
+; G and 20G (go to 20th line)
 +g::
 if modal =
-	Send, {Ctrl Down}{END}{Ctrl Up}
+{
+	if num =
+	{
+		Send, {Ctrl Down}{END}{Ctrl Up}
+	} else
+	{
+		num -= 1
+		Send, {Ctrl Down}{HOME}{Ctrl Up}{Down %num%)}
+	    num =
+	}
+}
 return
 
 ; gt and gT

@@ -20,6 +20,7 @@ Use the provided executable or the .ahk script with [Autohotkey](http://www.auto
 - _0_ goes to first character in line.
 - _C_ and _D_ to change / delete rest of line.
 - _gg_ and _G_ to go to beginning/end of document.
+- _5G_, _32G_ to go to a specific line. 
 - _gt_ and _gT_ to go to next/previous tab.
 - _x_ and _X_ (delete).
 - _Y_ to yank line.
