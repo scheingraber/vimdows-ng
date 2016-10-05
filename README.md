@@ -36,7 +36,7 @@ Use the provided executable or the .ahk script with [Autohotkey](http://www.auto
 - provide another script to remap caps to esc.
 
 ###Application-specific modifications:
-##Matlab:
+####Matlab:
 - Proper indent using editor indenting.
 
 ###Todo:
