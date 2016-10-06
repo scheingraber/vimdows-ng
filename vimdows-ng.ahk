@@ -392,25 +392,31 @@ Else
 return
 
 ; Decrease Indent
+; need to turn this into a new mode to get <2j, ...
 +,::
-IfWinActive, MATLAB
-{
-	Send, ^[
-} else {
-	; General indent
-	Send, {End}{Home}{Home}{Del}{Del}{Del}{Del}
+if IsLastKey("+,") {
+	IfWinActive, MATLAB
+	{
+		Send, ^[
+	} else {
+		; General indent
+		Send, {End}{Home}{Home}{Del}{Del}{Del}{Del}
+	}
 }
 return
 
 
+; need to turn this into a new mode to get <2j, ...
 ; Increase Indent
 +.::
-IfWinActive, MATLAB
-{
-	Send, ^]
-} else {
-	; General indent
-	Send, {Home}`t
+if IsLastKey("+.") {
+	IfWinActive, MATLAB
+	{
+		Send, ^]
+	} else {
+		; General indent
+		Send, {Home}`t
+	}
 }
 return
 
