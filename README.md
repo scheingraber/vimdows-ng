@@ -82,7 +82,7 @@ If you are not familiar with VIM yet, you might want to try a [vim tutorial](htt
 - Thunderbird: [Muttator](https://addons.mozilla.org/de/thunderbird/addon/muttator/)
 
 ####Code
-- JetBrains IDEs: [IDEA](https://plugins.jetbrains.com/plugin/164?pr=idea)
+- JetBrains IDEs: [IdeaVim](https://plugins.jetbrains.com/plugin/164?pr=idea)
 - for most IDEs, it's better to find a specific plugin if available.
 
 ####Editors
