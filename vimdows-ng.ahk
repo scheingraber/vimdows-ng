@@ -51,10 +51,6 @@ return
 return
 
 
-; notion / ION3 keybindings
-!.:: SendInput, {Ctrl Down}{LWin Down}{right}{Ctrl Up}{LWin Up}
-!,:: SendInput, {Ctrl Down}{LWin Down}{left}{Ctrl Up}{LWin Up}
-
 vim:
 while (vimModeOn = true or (!GetKeyState("Ctrl","P") and GetKeyState("CAPSLOCK", "P")))
 ; make it not run if ctrl+capslock is pressed (so ctrl+capslock toggles capslock
