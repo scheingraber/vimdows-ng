@@ -41,10 +41,11 @@ If you are not familiar with VIM yet, you might want to try a [vim tutorial](htt
 	gg, G 								    go to beginning/end of document
 	5G 										go to a specific line
 	gt, gT 									go to next/previous tab
+	y2w, yb, yy, y$, ... 					yank 2 words, yank back, yank line, yank rest of line
+	yi(w)									yank inner word
 	d2w, c5w, cb, ... 						change and delete mode
+	di(w)									delete inner word
 	x, X  								    delete single characters
-	yy  									yank line
-	y2w									    yank 2 words
 	Y  										yank rest of line
 	I 										go to beginning of line and enter insertion mode
 	e 										go to end of word
@@ -52,7 +53,7 @@ If you are not familiar with VIM yet, you might want to try a [vim tutorial](htt
 	<Ctrl> b, <Ctrl> f 						go page up/down
 
 ###More modifications in vimdows-ng
-- Change-mode, change-inner, delete-inner modes.
+- Change-mode, change-inner, delete-inner, yank-inner modes.
 - show tooltip "Vimdows" when active (useful when hiding task bar)
 - correction of indent and undo
 - provide another script to remap caps to esc.

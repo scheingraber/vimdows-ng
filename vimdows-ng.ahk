@@ -265,7 +265,7 @@ return
 
 
 ; todo: implement true ci and di -modal types here
-; change modal to changer-inner and delete-inner and wait for next key
+; change modal to changer-inner and delete-inner and wait for next movement key
 ; change context to change-inner and delete inner
 i::
 if (modal = "") {
@@ -282,6 +282,13 @@ if (modal = "") {
 	Send, {BACKSPACE}
 	unvimize()
 	vimModeOn := false
+	context =
+	modal =
+} else if (modal = yank) {
+	; for now, yi emulates yiw
+	GetWordSelection()
+	modal = %visual%
+	Run_Mode()
 	context =
 	modal =
 }
