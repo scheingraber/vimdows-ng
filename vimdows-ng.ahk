@@ -459,10 +459,12 @@ handle_nav_mode(nav)
 }
 
 GetLineSelection() {
+   global
    Send, {Shift Up}{Home}{Shift Down}{End}{DOWN %num%}{Home}{Shift Up}
 }
 
 GetWordSelection() {
+	global
 	Send, {Shift Up}^{Left}{Shift Down}^{Right %num%}{Shift Up}
 }
 
