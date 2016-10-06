@@ -95,15 +95,51 @@ IsLastKey(key)
 #IFWinExist vimOn
 
 ; Multiples
-1:: num = %num%1
-2:: num = %num%2
-3:: num = %num%3
-4:: num = %num%4
-5:: num = %num%5
-6:: num = %num%6
-7:: num = %num%7
-8:: num = %num%8
-9:: num = %num%9
+; limit to not blindly run sth too often
+1::
+	num = %num%1
+	numlimit(50)
+return
+
+2::
+	num = %num%2
+	numlimit(50)
+return
+
+3::
+	num = %num%3
+	numlimit(50)
+return
+
+4::
+	num = %num%4
+	numlimit(50)
+return
+
+5::
+	num = %num%5
+	numlimit(50)
+return
+
+6::
+	num = %num%6
+	numlimit(50)
+return
+
+7::
+	num = %num%7
+	numlimit(50)
+return
+
+8::
+	num = %num%8
+	numlimit(50)
+return
+
+9::
+	num = %num%9
+	numlimit(50)
+return
 
 ; 0 is used for num and to go to first char dep. on context
 0::
@@ -111,9 +147,17 @@ if (num = "") {
 	handle_nav_mode("{home}")
 	} else {
 		num = %num%0
+		numlimit(50)
 	}
 return
 
+; soft limit for num to not blindly execute too often
+numlimit(limit) {
+	global num
+	if (num > limit) {
+		num := limit
+	}
+}
 
 ; ~ toggle case
 ; TODO

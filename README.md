@@ -57,6 +57,7 @@ e 										go to end of word
 - show tooltip "Vimdows" when active (useful when hiding task bar)
 - correction of indent and undo
 - provide another script to remap caps to esc.
+- limit of 50 to not blindly execute a repeated command too often (e.g. 500w -> 50w)
 
 ###Application-specific modifications:
 ####Matlab:
