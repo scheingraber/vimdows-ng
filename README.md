@@ -24,6 +24,7 @@ by Rich Alesi, and most of the credit for this script goes to him.
 - _gg_ and _G_ to go to beginning/end of document.
 - _5G_, _32G_ to go to a specific line.
 - _gt_ and _gT_ to go to next/previous tab.
+- _d2w_, _c5w_, _cb_, ...
 - _x_ and _X_ (delete).
 - _yy_ to yank line.
 - _Y_ to yank rest of line line.
@@ -34,10 +35,9 @@ by Rich Alesi, and most of the credit for this script goes to him.
 - _Ctrl-b_ and _Ctrl-f_ to go page up/down.
 
 ###Some modifications in this fork:
+- Change-mode, change-inner, delete-inner modes.
 - show tooltip "Vimdows" when active (useful when hiding task bar)
 - correction of indent and undo
-- "inner-word" mode, not perfect: only "di" works which emulates "diw".
-- WIP change-mode.
 - provide another script to remap caps to esc.
 
 ###Application-specific modifications:
@@ -49,7 +49,6 @@ by Rich Alesi, and most of the credit for this script goes to him.
 
 ###Todo:
 - f _char_ should move to next occurence of _char_
-- proper change-mode.
 - jump between block beginning/end (in vim, % jumps between { and }, for instance)?
 - unify with [Vim-Keybindings for Onenote](https://github.com/ChrisPara/Vim-Keybindings-For-Onenote).
 

@@ -199,16 +199,27 @@ Esc::
 	Send {Left}{Right}
 return
 
+
+; todo: implement true ci and di -modal types here
+; change modal to changer-inner and delete-inner and wait for next key
+; change context to change-inner and delete inner
 i::
-if modal =
-{
+if (modal = "") {
+	; exit normal mode, go to insertion mode
 	unvimize()
     vimModeOn := false
-; this is not correct vim behaviour yet - do not want di, but diw
-; also need a "change" mode / context
-} else {
-   GetWordSelection()
-   Run_Mode()
+} else if (modal = delete) {
+	; for now, di emulates diw
+	GetWordSelection()
+	Run_Mode()
+} else if (modal = change) {
+	; for now, ci emulates ciw
+	GetWordSelection()
+	Send, {BACKSPACE}
+	unvimize()
+	vimModeOn := false
+	context =
+	modal =
 }
 return
 
