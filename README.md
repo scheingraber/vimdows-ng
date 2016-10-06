@@ -62,15 +62,14 @@ If you are not familiar with VIM yet, you might want to try a [vim tutorial](htt
 ####Matlab:
 - Proper indent using editor indenting.
 
-####Onenote:
-- Need to merge.
-
 ###Todo:
 - f _char_ should move to next occurence of _char_
 - jump between block beginning/end (in vim, % jumps between { and }, for instance)?
-- unify with [Vim-Keybindings for Onenote](https://github.com/ChrisPara/Vim-Keybindings-For-Onenote).
 
 ###You like this? You'll love these:
+####AHK Application-specific
+- [Vim Keybindings for Onenote](https://github.com/idvorkin/Vim-Keybindings-For-Onenote)
+
 ####AHK_L Alternative
 - [vim.ahk](https://github.com/mihaifm/vim.ahk/blob/master/vim.ahk)
 
