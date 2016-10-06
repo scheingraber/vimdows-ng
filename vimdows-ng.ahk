@@ -170,6 +170,12 @@ return
 	vimModeOn := false
 return
 
+; get next line to end of this line
++j::
+if modal =
+	Send, {Down}{Home}{Home}{Backspace}
+return
+
 ; Delete end of line
 +D::
 if modal =
