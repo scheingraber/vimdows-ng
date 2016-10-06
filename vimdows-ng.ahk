@@ -383,16 +383,24 @@ if (modal = "") {
 }
 return
 
+;y yanks in visual, yy yanks line
 y::
 if (modal = yanklines) {
 	modal = %yank%
+} else if (modal = "") {
+	if IsLastKey("y") {
+	    GetLineSelection()
+	    modal = %yank%
+	    Run_Mode()
+	}
 }
 Run_Mode()
 return
 
+;Y yanks rest of line
 +y::
 if (modal = "") {
-    GetLineSelection()
+    Send, {Shift Down}{End}{Shift Up}
     modal = %yank%
     Run_Mode()
 }

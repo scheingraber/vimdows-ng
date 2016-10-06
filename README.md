@@ -24,7 +24,8 @@ by Rich Alesi, and most of the credit for this script goes to him.
 - _5G_, _32G_ to go to a specific line.
 - _gt_ and _gT_ to go to next/previous tab.
 - _x_ and _X_ (delete).
-- _Y_ to yank line.
+- _yy_ to yank line.
+- _Y_ to yank rest of line line.
 - _I_ go to first char and exit normal mode.
 - _e_ goes to end of word.
 - _Ctrl-u_ and _Ctrl-d_ to go page up/down.
