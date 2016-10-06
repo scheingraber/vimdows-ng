@@ -11,16 +11,16 @@ This is forked from [achalddave](https://github.com/achalddave/Vimdows-Navigatio
 by Rich Alesi, and most of the credit for this script goes to him.
 
 ###Activate normal mode
-- with <tt>Shift-esc</tt>
-- with <tt>esc</tt> for selected programs:
+- with <tt>Shift-Esc</tt>
+- with <tt>Esc</tt> for selected programs:
 	* Matlab
 	* Thunderbird Text Composition
 
 ###Basic VIM navigation and text manipulation
 If you are not familiar with VIM yet, you might want to try a [vim tutorial](http://www.openvim.com/). A good in-depth book is [Practical VIM](https://pragprog.com/book/dnvim2/practical-vim-second-edition).
 
-Keys                                   Function
-====                                   ========
+	Keys                                   Function
+	====                                   ========
 	h, j, k, l, w, b, $, ^                 navigation
 	dd, d<w, b, $, ^>                      deletion
 	o, O                                   insert lines and exit normal mode
@@ -32,8 +32,8 @@ Keys                                   Function
 	/, n                                   Find, next found result (Uses Ctrl + F and F3)
 
 ###Some more advanced mappings in normal mode provided by this fork
-Keys									Function
-====									========
+	Keys									Function
+	====									========
 	a, A 									append at cursor / end of line
 	0 									    go to first character in line
 	C, D 									change / delete rest of line
