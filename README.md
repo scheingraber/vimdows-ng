@@ -16,23 +16,41 @@ by Rich Alesi, and most of the credit for this script goes to him.
 	* Matlab
 	* Thunderbird Text Composition
 
-###Additional mappings in normal mode provided by this fork
-- _a_ and _A_ to append at cursor / end of line.
-- _0_ goes to first character in line.
-- _C_ and _D_ to change / delete rest of line.
-- _J_ to move next line to end of this line.
-- _gg_ and _G_ to go to beginning/end of document.
-- _5G_, _32G_ to go to a specific line.
-- _gt_ and _gT_ to go to next/previous tab.
-- _d2w_, _c5w_, _cb_, ...
-- _x_ and _X_ (delete).
-- _yy_ to yank line.
-- _Y_ to yank rest of line line.
-- _I_ go to first char and exit normal mode.
-- _e_ goes to end of word.
-- _Ctrl-u_ and _Ctrl-d_ to go page up/down.
-- _Ctrl-r_ to redo, not shift-u.
-- _Ctrl-b_ and _Ctrl-f_ to go page up/down.
+###Basic VIM navigation and text manipulation
+If you are not familiar with VIM yet, you might want to try a [vim tutorial](http://www.openvim.com/). A good in-depth book is [Practical VIM](https://pragprog.com/book/dnvim2/practical-vim-second-edition).
+
+Keys                                   Function
+====                                   ========
+h, j, k, l, w, b, $, ^                 navigation
+dd, d<w, b, $, ^>                      deletion
+o, O                                   insert lines and exit normal mode
+p, P                                   paste lines
+v                                      yank mode; not perfect
+	                                           hit y after you're done selecting to copy
+<#[cmd]>                               Run 'cmd' # times. E.g. 3dd, 4w, 10l, etc
+u, <Shift> r                           Undo, redo
+/, n                                   Find, next found result (Uses Ctrl + F and F3)
+
+###Some more advanced mappings in normal mode provided by this fork
+
+Keys									Function
+====									========
+a, A 									append at cursor / end of line
+0 									    go to first character in line
+C, D 									change / delete rest of line
+J									    move next line to end of this line
+gg, G 								    go to beginning/end of document
+5G 										go to a specific line
+gt, gT 									go to next/previous tab
+d2w, c5w, cb, ... 						change and delete mode
+x, X  								    delete single characters
+yy  									yank line
+y2w									    yank 2 words
+Y  										yank rest of line
+I 										go to beginning of line and enter insertion mode
+e 										go to end of word
+<Ctrl> u, <Ctrl> d 						go page up/down
+<Ctrl> b, <Ctrl> f 						go page up/down
 
 ###Some modifications in this fork:
 - Change-mode, change-inner, delete-inner modes.
@@ -67,27 +85,3 @@ by Rich Alesi, and most of the credit for this script goes to him.
 
 ####Editors
 - Atom: [Vim-mode plus](https://atom.io/packages/vim-mode-plus)
-
-
-###Original Readme:
-
-**Vim "mode"**: Toggle with <tt>Shift</tt>+<tt>Esc</tt>; <tt>i</tt> will also exit
-this mode
-
-
-**Quick Vim keys**:  <tt>CapsLock</tt> + <tt>cmd</tt>
-
-Note that because of the way Quick Vim functions, you will have to use
-<tt>Ctrl</tt>+<tt>CapsLock</tt> to toggle <tt>CapsLock</tt>.
-
-	Keys                                   Function
-	====                                   ========
-	h, j, k, l, w, b, $, ^                 navigation
-	dd, d<w, b, $, ^>                      deletion
-	o, O                                   insert lines and exit vim 'mode'
-	p, P                                   paste lines
-	v                                      yank mode; not perfect
-   	                                           hit y after you're done selecting to copy
-	<#[cmd]>                               Run 'cmd' # times. E.g. 3dd, 4w, 10l, etc
-	u, <shift> u                           Undo, redo
-	/, n                                   Find, next found result (Uses Ctrl + F and F3)
