@@ -19,6 +19,7 @@ context =
 num =
 delete = x
 visual = c
+yank = cy
 change = cc
 visuallines = cl
 
@@ -459,6 +460,21 @@ if (modal = "") {
 }
 return
 
+y::
+if (modal = "") {
+   context = Yank Mode
+   modal = %yank%
+} else if (modal = yank) {
+   GetLineSelection()
+   modal = %visual%
+   Run_Mode()
+} else if ( modal = visuallines or modal = visual ) {
+    ;yank text from visual mode
+	modal = %yank%
+	Run_Mode()
+}
+return
+
 c::
 if (modal = "") {
     context = Change Mode
@@ -497,20 +513,6 @@ if (modal = "") {
 }
 return
 
-;y yanks in visual, yy yanks line
-y::
-if (modal = visuallines) {
-	modal = %visual%
-} else if (modal = "") {
-	if IsLastKey("y") {
-	    GetLineSelection()
-	    modal = %visual%
-	    Run_Mode()
-	}
-}
-Run_Mode()
-return
-
 ;Y yanks rest of line
 +y::
 if (modal = "") {
@@ -533,6 +535,9 @@ handle_nav_mode(nav)
 	} else {
 		Send, +%nav%
 		if (modal = delete) {
+			Run_Mode()
+		} else if ( modal = yank ) {
+			modal = %visual%
 			Run_Mode()
 	    } else if ( modal = change ) {
 			Send, {BACKSPACE}
