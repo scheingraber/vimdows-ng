@@ -19,41 +19,37 @@ by Rich Alesi, and most of the credit for this script goes to him.
 ###Basic VIM navigation and text manipulation
 If you are not familiar with VIM yet, you might want to try a [vim tutorial](http://www.openvim.com/). A good in-depth book is [Practical VIM](https://pragprog.com/book/dnvim2/practical-vim-second-edition).
 
-<tt>
 Keys                                   Function
 ====                                   ========
-h, j, k, l, w, b, $, ^                 navigation
-dd, d<w, b, $, ^>                      deletion
-o, O                                   insert lines and exit normal mode
-p, P                                   paste lines
-v                                      yank mode; not perfect
-	                                           hit y after you're done selecting to copy
-<#[cmd]>                               Run 'cmd' # times. E.g. 3dd, 4w, 10l, etc
-u, <Shift> r                           Undo, redo
-/, n                                   Find, next found result (Uses Ctrl + F and F3)
-</tt>
+	h, j, k, l, w, b, $, ^                 navigation
+	dd, d<w, b, $, ^>                      deletion
+	o, O                                   insert lines and exit normal mode
+	p, P                                   paste lines
+	v                                      yank mode; not perfect
+		                                           hit y after you're done selecting to copy
+	<#[cmd]>                               Run 'cmd' # times. E.g. 3dd, 4w, 10l, etc
+	u, <Shift> r                           Undo, redo
+	/, n                                   Find, next found result (Uses Ctrl + F and F3)
 
 ###Some more advanced mappings in normal mode provided by this fork
-<tt>
 Keys									Function
 ====									========
-a, A 									append at cursor / end of line
-0 									    go to first character in line
-C, D 									change / delete rest of line
-J									    move next line to end of this line
-gg, G 								    go to beginning/end of document
-5G 										go to a specific line
-gt, gT 									go to next/previous tab
-d2w, c5w, cb, ... 						change and delete mode
-x, X  								    delete single characters
-yy  									yank line
-y2w									    yank 2 words
-Y  										yank rest of line
-I 										go to beginning of line and enter insertion mode
-e 										go to end of word
-<Ctrl> u, <Ctrl> d 						go page up/down
-<Ctrl> b, <Ctrl> f 						go page up/down
-</tt>
+	a, A 									append at cursor / end of line
+	0 									    go to first character in line
+	C, D 									change / delete rest of line
+	J									    move next line to end of this line
+	gg, G 								    go to beginning/end of document
+	5G 										go to a specific line
+	gt, gT 									go to next/previous tab
+	d2w, c5w, cb, ... 						change and delete mode
+	x, X  								    delete single characters
+	yy  									yank line
+	y2w									    yank 2 words
+	Y  										yank rest of line
+	I 										go to beginning of line and enter insertion mode
+	e 										go to end of word
+	<Ctrl> u, <Ctrl> d 						go page up/down
+	<Ctrl> b, <Ctrl> f 						go page up/down
 
 ###More modifications in this fork:
 - Change-mode, change-inner, delete-inner modes.
