@@ -71,7 +71,7 @@ If you are not familiar with VIM yet, you might want to try a [vim tutorial](htt
 - unify with [Vim-Keybindings for Onenote](https://github.com/ChrisPara/Vim-Keybindings-For-Onenote).
 
 ###You like this? You'll love these:
-####AHK_L Script
+####AHK_L Alternative
 - [vim.ahk](https://github.com/mihaifm/vim.ahk/blob/master/vim.ahk)
 
 ####Browsers
