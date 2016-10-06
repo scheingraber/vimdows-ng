@@ -19,6 +19,7 @@ context =
 num =
 delete = x
 yank = c
+change = cc
 yanklines = cl
 
 SetTimer, vim, 100
@@ -182,7 +183,7 @@ if modal =
 	Send, {SHIFT DOWN}{END}{SHIFT UP}{DEL}
 return
 
-; delete and change end of line
+; change end of line
 +C::
 if modal =
 	Send, {SHIFT DOWN}{END}{SHIFT UP}{DEL}
@@ -363,7 +364,7 @@ u::Send, ^z
 x::Send, {Del}
 +x::Send, {Backspace}
 
-; Modal
+;; Modal
 d::
 if (modal = "") {
    context = Delete Mode
@@ -371,6 +372,29 @@ if (modal = "") {
 } else if ( modal = delete) {
    GetLineSelection()
    Run_Mode()
+}
+return
+
+c::
+if (modal = "") {
+    context = Change Mode
+    modal = %change%
+} else if (modal = yanklines or modal = yank) {
+    ;change text from visual mode
+	modal = %delete%
+	Run_Mode()
+	unvimize()
+	vimModeOn := false
+} else if ( modal = change) {
+	if islastkey("c") {
+		GetLineSelection()
+		Send, {BACKSPACE}
+		unvimize()
+		vimModeOn := false
+		Send, {Enter}{Up}
+		context =
+		modal =
+	}
 }
 return
 
@@ -412,29 +436,6 @@ if (modal = "") {
 }
 return
 
-;change text from visual mode
-c::
-if (modal = yanklines or modal = yank) {
-	modal = %delete%
-	Run_Mode()
-	unvimize()
-	vimModeOn := false
-
-;cc
-} else if modal =
-	{
-	if IsLastKey("c") {
-		GetLineSelection()
-		Send, {BACKSPACE}
-		unvimize()
-		vimModeOn := false
-		Send, {Enter}{Up}
-	}
-}
-return
-
-^+!r::Reload
-
 #IfWinExist
 
 ; ===== SubRoutines =====
@@ -449,6 +450,10 @@ handle_nav_mode(nav)
 		Send, +%nav%
 		if (modal = delete) {
 			Run_Mode()
+	    } else if ( modal = change ) {
+			Send, {BACKSPACE}
+			unvimize()
+			vimModeOn := false
 		} else if (modal = yanklines) {
 			if (nav = "down") {
 				Send +{End}
