@@ -104,14 +104,21 @@ IsLastKey(key)
 7:: num = %num%7
 8:: num = %num%8
 9:: num = %num%9
-;todo: check num and handle navigation / num case correctly
-; 0:: num = %num%0
+
+; 0 is used for num and to go to first char dep. on context
+0::
+if (num = "") {
+	handle_nav_mode("{home}")
+	} else {
+		num = %num%0
+	}
+return
+
 
 ; ~ toggle case
+; TODO
 
 ; Navigation
-
-0::handle_nav_mode("{home}")
 +4::handle_nav_mode("{end}")
 +6::handle_nav_mode("{home}")
 
