@@ -434,6 +434,10 @@ if (modal = "") {
 } else if ( modal = delete) {
    GetLineSelection()
    Run_Mode()
+} else if ( modal = yanklines or modal = yank ) {
+    ;delete text from visual mode
+	modal = %delete%
+	Run_Mode()
 }
 return
 
