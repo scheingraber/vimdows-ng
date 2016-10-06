@@ -11,14 +11,15 @@ This is forked from [achalddave](https://github.com/achalddave/Vimdows-Navigatio
 by Rich Alesi, and most of the credit for this script goes to him.
 
 ###Activate normal mode
-- with _shift-esc_
-- with _esc_ for selected programs:
+- with <tt>Shift-esc</tt>
+- with <tt>esc</tt> for selected programs:
 	* Matlab
 	* Thunderbird Text Composition
 
 ###Basic VIM navigation and text manipulation
 If you are not familiar with VIM yet, you might want to try a [vim tutorial](http://www.openvim.com/). A good in-depth book is [Practical VIM](https://pragprog.com/book/dnvim2/practical-vim-second-edition).
 
+<tt>
 Keys                                   Function
 ====                                   ========
 h, j, k, l, w, b, $, ^                 navigation
@@ -30,9 +31,10 @@ v                                      yank mode; not perfect
 <#[cmd]>                               Run 'cmd' # times. E.g. 3dd, 4w, 10l, etc
 u, <Shift> r                           Undo, redo
 /, n                                   Find, next found result (Uses Ctrl + F and F3)
+</tt>
 
 ###Some more advanced mappings in normal mode provided by this fork
-
+<tt>
 Keys									Function
 ====									========
 a, A 									append at cursor / end of line
@@ -51,8 +53,9 @@ I 										go to beginning of line and enter insertion mode
 e 										go to end of word
 <Ctrl> u, <Ctrl> d 						go page up/down
 <Ctrl> b, <Ctrl> f 						go page up/down
+</tt>
 
-###Some modifications in this fork:
+###More modifications in this fork:
 - Change-mode, change-inner, delete-inner modes.
 - show tooltip "Vimdows" when active (useful when hiding task bar)
 - correction of indent and undo
