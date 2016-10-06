@@ -18,9 +18,9 @@ modal =
 context =
 num =
 delete = x
-yank = c
+visual = c
 change = cc
-yanklines = cl
+visuallines = cl
 
 SetTimer, vim, 100
 Return
@@ -434,7 +434,7 @@ if (modal = "") {
 } else if ( modal = delete) {
    GetLineSelection()
    Run_Mode()
-} else if ( modal = yanklines or modal = yank ) {
+} else if ( modal = visuallines or modal = visual ) {
     ;delete text from visual mode
 	modal = %delete%
 	Run_Mode()
@@ -445,7 +445,7 @@ c::
 if (modal = "") {
     context = Change Mode
     modal = %change%
-} else if (modal = yanklines or modal = yank) {
+} else if (modal = visuallines or modal = visual) {
     ;change text from visual mode
 	modal = %delete%
 	Run_Mode()
@@ -466,27 +466,27 @@ return
 
 v::
 if (modal = "") {
-   context = Yank Mode
-   modal = %yank%
+   context = Visual Mode
+   modal = %visual%
 }
 return
 
 +v::
 if (modal = "") {
 	GetLineSelection()
-	context = Line Yank Mode
-	modal = %yanklines%
+	context = Visual Line Mode
+	modal = %visuallines%
 }
 return
 
 ;y yanks in visual, yy yanks line
 y::
-if (modal = yanklines) {
-	modal = %yank%
+if (modal = visuallines) {
+	modal = %visual%
 } else if (modal = "") {
 	if IsLastKey("y") {
 	    GetLineSelection()
-	    modal = %yank%
+	    modal = %visual%
 	    Run_Mode()
 	}
 }
@@ -497,7 +497,7 @@ return
 +y::
 if (modal = "") {
     Send, {Shift Down}{End}{Shift Up}
-    modal = %yank%
+    modal = %visual%
     Run_Mode()
 }
 return
@@ -520,7 +520,7 @@ handle_nav_mode(nav)
 			Send, {BACKSPACE}
 			unvimize()
 			vimModeOn := false
-		} else if (modal = yanklines) {
+		} else if (modal = visuallines) {
 			if (nav = "down") {
 				Send +{End}
 			} else if (nav = "up") {
