@@ -68,7 +68,7 @@ If you are not familiar with VIM yet, you might want to try a [vim tutorial](htt
 
 ###You like this? You'll love these:
 ####AHK Alternative
-- [vim.ahk](https://github.com/mihaifm/vim.ahk/blob/master/vim.ahk)
+- [vim.ahk](https://github.com/mihaifm/vim.ahk)
 
 ####AHK Application-specific
 - [Vim Keybindings for Onenote](https://github.com/idvorkin/Vim-Keybindings-For-Onenote)
