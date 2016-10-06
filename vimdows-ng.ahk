@@ -35,20 +35,32 @@ vimModeOn := false
 ; enter normal mode for some programs with ESC
 #IfWinActive MATLAB
 Esc::
-	vimModeOn := !vimModeOn
+	if (modal = "") {
+		vimModeOn := true
+	} else {
+		vimModeOn := !vimModeOn
+	}
 return
 #IfWinActive
 ; Thunderbird
 #IfWinActive Verfassen
 Esc::
-	vimModeOn := !vimModeOn
+	if (modal = "") {
+		vimModeOn := true
+	} else {
+		vimModeOn := !vimModeOn
+	}
 return
 #IfWinActive
 
 
 ; can always enter normal mode with shift-ESC
 +Esc::
-	vimModeOn := !vimModeOn
+	if (modal = "") {
+		vimModeOn := true
+	} else {
+		vimModeOn := !vimModeOn
+	}
 return
 
 
