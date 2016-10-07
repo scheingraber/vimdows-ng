@@ -201,18 +201,14 @@ return
 ; navigation keys
 
 h::handle_nav_mode("{left " . num . "}")
-
 j::handle_nav_mode("{down " . num . "}")
-
 k::handle_nav_mode("{up " . num . "}")
-
 l::handle_nav_mode("{right " . num . "}")
 
 w::handle_nav_mode("^{right " . num . "}")
-
 e::handle_nav_mode("^{right " . num . "}{left}")
-
 b::handle_nav_mode("^{left " . num . "}")
+
 
 ; Insert lines
 o::
@@ -244,13 +240,21 @@ return
 ; Delete end of line
 +D::
 if modal =
-	Send, {SHIFT DOWN}{END}{SHIFT UP}{DEL}
+	; select end of line
+	GetEndOfLineSelection()
+	; set modal to cut
+	modal = x
+	Run_Mode()
 return
 
 ; change end of line
 +C::
 if modal =
-	Send, {SHIFT DOWN}{END}{SHIFT UP}{DEL}
+	; select end of line
+	GetEndOfLineSelection()
+	; set modal to cut
+	modal = x
+	Run_Mode()
 	unvimize()
 	vimModeOn := false
 return
@@ -523,8 +527,10 @@ return
 ;Y yanks rest of line
 +y::
 if (modal = "") {
-    Send, {Shift Down}{End}{Shift Up}
-    modal = %visual%
+	; select end of line
+	GetEndOfLineSelection()
+	; set modal to copy
+    modal = c
     Run_Mode()
 }
 return
@@ -533,6 +539,7 @@ return
 
 ; ===== SubRoutines =====
 
+; handle navigation keys hjkl, w, e, b
 handle_nav_mode(nav)
 {
 	global
@@ -565,16 +572,27 @@ handle_nav_mode(nav)
 	return
 }
 
+; text block/object selection modes
+
+; select line (e.g. yy)
 GetLineSelection() {
    global
    Send, {Shift Up}{Home}{Shift Down}{End}{DOWN %num%}{Home}{Shift Up}
 }
 
+; select end of line (e.g. y$, C)
+GetEndOfLineSelection() {
+	; select end of line
+	Send, {SHIFT DOWN}{END}{SHIFT UP}
+}
+
+; select word (e.g. yw)
 GetWordSelection() {
 	global
 	Send, {Shift Up}^{Left}{Shift Down}^{Right %num%}{Shift Up}
 }
 
+; run command - yank, delete, change
 Run_Mode() {
    global modal
    Send, ^%modal%
