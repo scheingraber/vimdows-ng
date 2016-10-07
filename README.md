@@ -17,7 +17,10 @@ by Rich Alesi, and most of the credit for this script goes to him.
 	* Thunderbird Text Composition
 
 ###Basic VIM navigation and text manipulation
-If you are not familiar with VIM yet, you might want to try a [vim tutorial](http://www.openvim.com/). A good in-depth book is [Practical VIM](https://pragprog.com/book/dnvim2/practical-vim-second-edition).
+If you are not familiar with VIM yet, you might want to try a [vim tutorial](http://www.openvim.com/).
+Or you might want to try [Vim Adventures](http://vim-adventures.com/) :)
+
+A good in-depth book is [Practical VIM](https://pragprog.com/book/dnvim2/practical-vim-second-edition).
 
 	Keys                                   Function
 	====                                   ========
