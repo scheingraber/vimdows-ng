@@ -111,47 +111,47 @@ IsLastKey(key)
 ; limit to not blindly run sth too often
 1::
 	num = %num%1
-	numlimit(50)
+	numlimit(500)
 return
 
 2::
 	num = %num%2
-	numlimit(50)
+	numlimit(500)
 return
 
 3::
 	num = %num%3
-	numlimit(50)
+	numlimit(500)
 return
 
 4::
 	num = %num%4
-	numlimit(50)
+	numlimit(500)
 return
 
 5::
 	num = %num%5
-	numlimit(50)
+	numlimit(500)
 return
 
 6::
 	num = %num%6
-	numlimit(50)
+	numlimit(500)
 return
 
 7::
 	num = %num%7
-	numlimit(50)
+	numlimit(500)
 return
 
 8::
 	num = %num%8
-	numlimit(50)
+	numlimit(500)
 return
 
 9::
 	num = %num%9
-	numlimit(50)
+	numlimit(500)
 return
 
 ; 0 is used for num and to go to first char dep. on context
@@ -160,7 +160,7 @@ if (num = "") {
 	handle_nav_mode("{home}")
 	} else {
 		num = %num%0
-		numlimit(50)
+		numlimit(500)
 	}
 return
 
