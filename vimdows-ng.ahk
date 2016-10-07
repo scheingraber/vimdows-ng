@@ -477,7 +477,7 @@ if (modal = "") {
    Run_Mode()
 } else if ( modal = visuallines or modal = visual ) {
     ;yank text from visual mode
-	modal = %yank%
+	modal = %visual%
 	Run_Mode()
 }
 return
