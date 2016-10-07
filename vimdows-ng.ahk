@@ -173,34 +173,40 @@ numlimit(limit) {
 }
 
 ; swap case of current letter
-; credit: this is taken from vim_onenote.ahk
 ~::
-    ; push clipboard to local variable
-    ClipSaved := ClipboardAll
-
-        ; copy 1 charector
-        Send, {ShiftDown}{Right}
-        Send, ^c
-        Send, {Shift}
-
-        ; invert char
-        char_to_invert:= Substr(Clipboard, 1, 1)
-        if char_to_invert is upper
-           inverted_char := Chr(Asc(char_to_invert) + 32)
-        else if char_to_invert is lower
-           inverted_char := Chr(Asc(char_to_invert) - 32)
-        else
-           inverted_char := char_to_invert
-
-        ;paste char.
-        ClipBoard := inverted_char
-        Send ^v{left}{right}
-
-        ;restore original clipboard
-        Clipboard := ClipSaved
-        ClipWait
-    ClipSaved := ; free memory
+	if (modal = visuallines or modal = visual) {
+		Convert_Inv()
+	} else {
+		GetCharSelection()
+		Convert_Inv()
+		num =
+	}
+	; return to prev position
+	Send, {Left}
 return
+
+; credit: this is taken from https://autohotkey.com/board/topic/24431-convert-text-uppercase-lowercase-capitalized-or-inverted/
+Convert_Inv()
+{
+ Clip_Save:= ClipboardAll                                            ; save original contents of clipboard
+ Clipboard:= ""                                                      ; empty clipboard
+ Send ^c{delete}                                                     ; copy highlighted text to clipboard
+
+ Inv_Char_Out:= ""                                                   ; clear variable that will hold output string
+ Loop % Strlen(Clipboard) {                                          ; loop for each character in the clipboard
+    Inv_Char:= Substr(Clipboard, A_Index, 1)                         ; isolate the character
+    if Inv_Char is upper                                             ; if upper case
+       Inv_Char_Out:= Inv_Char_Out Chr(Asc(Inv_Char) + 32)           ; convert to lower case
+    else if Inv_Char is lower                                        ; if lower case
+       Inv_Char_Out:= Inv_Char_Out Chr(Asc(Inv_Char) - 32)           ; convert to upper case
+    else
+       Inv_Char_Out:= Inv_Char_Out Inv_Char                          ; copy character to output var unchanged
+ }
+ Send %Inv_Char_Out%                                                 ; send desired text
+ Len:= Strlen(Inv_Char_Out)
+ Send +{left %Len%}                                                  ; highlight desired text
+ Clipboard:= Clip_Save                                               ; restore original clipboard
+}
 
 ; Navigation
 +4::handle_nav_mode("{end}")
@@ -613,10 +619,17 @@ GetEndOfLineSelection() {
 	Send, {SHIFT DOWN}{END}{SHIFT UP}
 }
 
-; select word (e.g. yw)
+; select inner word (e.g. yw)
+; todo: correctly split select inner word and select word!
 GetWordSelection() {
 	global
 	Send, {Shift Up}^{Left}{Shift Down}^{Right %num%}{Shift Up}
+}
+
+; select next character (e.g. for ~, or for r)
+GetCharSelection() {
+	global
+	Send, {Shift Down}{Right %num%}{Shift Up}
 }
 
 ; run command - yank, delete, change
