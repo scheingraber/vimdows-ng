@@ -51,6 +51,7 @@ If you are not familiar with VIM yet, you might want to try a [vim tutorial](htt
 	e 										go to end of word
 	<Ctrl> u, <Ctrl> d 						go page up/down
 	<Ctrl> b, <Ctrl> f 						go page up/down
+	~										Change case of current letter (upper/lower)
 
 ###More modifications in vimdows-ng
 - Change-mode, change-inner, delete-inner, yank-inner modes.

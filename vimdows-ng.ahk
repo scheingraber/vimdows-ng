@@ -172,8 +172,35 @@ numlimit(limit) {
 	}
 }
 
-; ~ toggle case
-; TODO
+; swap case of current letter
+; credit: this is taken from vim_onenote.ahk
+~::
+    ; push clipboard to local variable
+    ClipSaved := ClipboardAll
+
+        ; copy 1 charector
+        Send, {ShiftDown}{Right}
+        Send, ^c
+        Send, {Shift}
+
+        ; invert char
+        char_to_invert:= Substr(Clipboard, 1, 1)
+        if char_to_invert is upper
+           inverted_char := Chr(Asc(char_to_invert) + 32)
+        else if char_to_invert is lower
+           inverted_char := Chr(Asc(char_to_invert) - 32)
+        else
+           inverted_char := char_to_invert
+
+        ;paste char.
+        ClipBoard := inverted_char
+        Send ^v{left}{right}
+
+        ;restore original clipboard
+        Clipboard := ClipSaved
+        ClipWait
+    ClipSaved := ; free memory
+return
 
 ; Navigation
 +4::handle_nav_mode("{end}")
