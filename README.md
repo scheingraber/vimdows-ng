@@ -92,3 +92,7 @@ A good in-depth book is [Practical VIM](https://pragprog.com/book/dnvim2/practic
 
 ####Editors
 - Atom: [Vim-mode plus](https://atom.io/packages/vim-mode-plus)
+
+####Window-Management
+- like notion: [winion](https://github.com/ChrisPara/winion)
+- like dwm/awesome: [bug.n](https://github.com/fuhsjr00/bug.n) and [my vim-inspired config](https://github.com/ChrisPara/winion/blob/master/Config.ini)

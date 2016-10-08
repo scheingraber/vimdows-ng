@@ -485,6 +485,14 @@ u::Send, ^z
 ; replace
 +r::Send, {Ins}
 
+r::
+if (modal = "") {
+	Send, +{Right}
+	unvimize()
+	vimModeOn := false
+	}
+return
+
 ; delete
 x::Send, {Del}
 +x::Send, {Backspace}
