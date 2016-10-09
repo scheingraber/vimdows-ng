@@ -42,6 +42,16 @@ Esc::
 		vimModeOn := !vimModeOn
 	}
 return
+
+#IfWinActive Editor
+Esc::
+	if (modal = "") {
+		vimModeOn := true
+	} else {
+		vimModeOn := !vimModeOn
+	}
+return
+
 #IfWinActive
 ; Thunderbird
 #IfWinActive Verfassen
