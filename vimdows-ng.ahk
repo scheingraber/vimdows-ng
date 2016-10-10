@@ -433,6 +433,7 @@ return
   vimModeOn := false
   return
 n::Send {F3}
++n::Send +{F3}
 
 ; Pasting
 
