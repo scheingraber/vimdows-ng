@@ -1,7 +1,7 @@
 vimdows-ng - vim normal mode anywhere in Windows
 ------------------------------------------------
 
-###Info
+### Info
 Vimdows-ng allows you to use Vim (or vim-like) normal mode anywhere in Windows.
 
 Use the provided executable or the .ahk script with [Autohotkey](http://www.autohotkey.com). It does not require any special permissions and will run in your system notification area until activated, when it'll show an icon on your taskbar and a small tooltip overlay in the top-left corner of the screen.
@@ -10,13 +10,13 @@ This is based on previous work of [achalddave](https://github.com/achalddave/Vim
 [original script](http://www.autohotkey.com/community/viewtopic.php?t=44762)
 by Rich Alesi, and most of the credit for this script goes to him.
 
-###Activate normal mode
+### Activate normal mode
 - with <tt>Shift-Esc</tt>
 - with <tt>Esc</tt> for selected programs:
 	* Matlab
 	* Thunderbird Text Composition
 
-###Basic VIM navigation and text manipulation
+### Basic VIM navigation and text manipulation
 If you are not familiar with VIM yet, you might want to try a [vim tutorial](http://www.openvim.com/).
 Or you might want to try [Vim Adventures](http://vim-adventures.com/) :)
 
@@ -34,7 +34,7 @@ A good in-depth book is [Practical VIM](https://pragprog.com/book/dnvim2/practic
 	u, <Shift> r                           Undo, redo
 	/, n                                   Find, next found result (Uses Ctrl + F and F3)
 
-###Some more advanced mappings in normal mode provided by vimdows-ng
+### Some more advanced mappings in normal mode provided by vimdows-ng
 	Keys									Function
 	====									========
 	a, A 									append at cursor / end of line
@@ -56,43 +56,43 @@ A good in-depth book is [Practical VIM](https://pragprog.com/book/dnvim2/practic
 	<Ctrl> b, <Ctrl> f 						go page up/down
 	~, 3~,v3w~,... 							Toggle case of next char(s) or visual selection.
 
-###More modifications in vimdows-ng
+### More modifications in vimdows-ng
 - Change-mode, change-inner, delete-inner, yank-inner modes.
 - show tooltip "Vimdows" when active (useful when hiding task bar)
 - correction of indent and undo
 - provide another script to remap caps to esc.
 - limit of 50 to not blindly execute a repeated command too often (e.g. 500w -> 50w)
 
-###Application-specific modifications:
-####Matlab:
+### Application-specific modifications:
+#### Matlab:
 - Proper indent using editor indenting.
 
-###Todo:
+### Todo:
 - f _char_ should move to next occurence of _char_
 - jump between block beginning/end (in vim, % jumps between { and }, for instance)?
 
-###You like this? You'll love these:
-####AHK_L Alternative
+### You like this? You'll love these:
+#### AHK_L Alternative
 - [vim.ahk](https://github.com/mihaifm/vim.ahk) (better code structure, but very slow)
 
-####AHK Application-specific
+#### AHK Application-specific
 - [Vim Keybindings for Onenote](https://github.com/idvorkin/Vim-Keybindings-For-Onenote)
 
-####Browsers
+#### Browsers
 - Firefox: [Vimperator](https://addons.mozilla.org/de/firefox/addon/vimperator/) and [Pentadactyl](http://5digits.org/pentadactyl/)
 - Chrome: [Vimium](https://vimium.github.io/)
 
-####Office
+#### Office
 - LibreOffice: [VibreOffice](https://github.com/seanyeh/vibreoffice)
 - Thunderbird: [Muttator](https://addons.mozilla.org/de/thunderbird/addon/muttator/)
 
-####Code
+#### Code
 - JetBrains IDEs: [IdeaVim](https://plugins.jetbrains.com/plugin/164?pr=idea)
 - for most IDEs, it's better to find a specific plugin if available.
 
-####Editors
+#### Editors
 - Atom: [Vim-mode plus](https://atom.io/packages/vim-mode-plus)
 
-####Window-Management
+#### Window-Management
 - like notion: [winion](https://github.com/ChrisPara/winion)
 - like dwm/awesome: [bug.n](https://github.com/fuhsjr00/bug.n) and [my vim-inspired config](https://github.com/ChrisPara/winion/blob/master/Config.ini)
