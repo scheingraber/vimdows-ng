@@ -34,7 +34,7 @@ A good in-depth book is [Practical VIM](https://pragprog.com/book/dnvim2/practic
 	u, <Shift> r                           Undo, redo
 	/, n                                   Find, next found result (Uses Ctrl + F and F3)
 
-### Some more advanced mappings in normal mode provided by vimdows-ng
+### Some advanced mappings in normal mode provided by vimdows-ng
 	Keys									Function
 	====									========
 	a, A 									append at cursor / end of line
@@ -95,4 +95,4 @@ A good in-depth book is [Practical VIM](https://pragprog.com/book/dnvim2/practic
 
 #### Window-Management
 - like notion: [winion](https://github.com/ChrisPara/winion)
-- like dwm/awesome: [bug.n](https://github.com/fuhsjr00/bug.n) and [my vim-inspired config](https://github.com/ChrisPara/winion/blob/master/Config.ini)
+- like dwm/awesome: [bug.n](https://github.com/fuhsjr00/bug.n)
